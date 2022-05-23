@@ -1,0 +1,153 @@
+Farmacia santa_clara
+   "usuarios" : {
+       nombre
+       email
+       telefono
+       direccion:{
+              calle
+              col_fracc
+              numero_ext
+              numero_int
+              municipio
+              estado
+              codigo_postal
+       }
+       edad
+       sexo
+       password
+       token_de_pago
+   }
+
+   "productos":{
+        lote
+        nombre
+        desc
+        precio
+        departamento
+        stock
+        descuento
+   }
+
+   "checkout":{
+       metodopago
+       titular
+       cortefinal
+       fecha_trancc
+       hora_trancc
+       iva
+       items: {
+           producto_id:
+           cantidad
+           total
+       }
+       token_usuario
+       status
+       costo_envio
+   }
+
+   "carrito":{
+       nombre
+       producto_id
+       cantidad
+       subtotal
+       iva
+       total
+   }
+
+   "ofertas":{
+       producto_id
+       precio
+       descuento
+       fecha_inicio
+       fecha_fin
+   }
+   "log":{
+       action =[insert,update]
+       date = datenow()
+       table='productos', usuarios, ofertas, carrito
+   }
+
+
+
+Crear la base de datos con nombre santa_clara
+Crear las colecciones de la farmacia santa_clara
+Insertar por lo menos dos registros a cada colección (usuarios y productos)
+Actualizar un registro de usuarios y productos
+Agregar un registro a carrito utilizando las funciones de select y de insert en una función
+Sí se actualiza un registro de productos insertar a oferta el producto actualizado
+
+
+datos_productos = [{
+        'lote':'25602140',
+        'nombre':'Paracetamol',
+        'desc':'Medicamento para aliviar el dolor muscular',
+        'precio':32,
+        'departamento':'Analgésico',
+        'receta':False,
+        'stock':'2000',
+        'descuento':0,
+},
+{
+        'lote':'30a0332',
+        'nombre':'Amoxicilina',
+        'desc':'Medicamento para tratar algunas infecciones provocadas por bacterias',
+        'precio':110,
+        'departamento':'Antibiótico',
+        'receta':True,
+        'stock':'500',
+        'descuento':0,
+},
+]
+
+
+datos_usuarios = [
+    {
+        'nombre':'Paola Rosales',   
+        'email':'paolarosalesv2001@gmail.com',
+       'telefono':6182349653,
+       'direccion':{
+              'calle':'20 NOV',
+              'col_fracc':'Zona centro',
+              'numero_ext':'s/n',
+              'numero_int':'s/n',
+              'municipio':'Durango',
+              'estado':'Durango',
+              'codigo_postal':'34000',
+       },
+       'edad':20,
+       'sexo':'M',
+       'password':'admin123',
+       'token_de_pago':'123456789',
+    },
+       {
+        'nombre':'Elizabeth Verdín',   
+        'email':'paolaros2001@gmail.com',
+       'telefono':6182349658,
+       'direccion':{
+              'calle':'Manzanos',
+              'col_fracc':'Alamedas',
+              'numero_ext':'52',
+              'numero_int':'s/n',
+              'municipio':'Durango',
+              'estado':'Durango',
+              'codigo_postal':'34106',
+       },
+       'edad':25,
+       'sexo':'M',
+       'password':'root23',
+       'token_de_pago':'123456789356',
+    }
+    
+]
+
+
+#Actualizaciones en usuarios
+#Token de pago, Número interior, Código Postal
+datos = {'token_de_pago': '688686'} 
+nuevos = {
+   'token_de_pago': '688686',
+   'direccion.numero_int':'216A',
+   'direccion.cp':'47426'
+    }
+
+Buscar para que sirve librería PANDAS y cual es su función
